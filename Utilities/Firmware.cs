@@ -586,6 +586,12 @@ namespace MissionPlanner.Utilities
 
                     try
                     {
+                        up.verifyotp();
+                    }
+                    catch { CustomMessageBox.Show("This board is NOT a Genuine 3DR Board", "Clone"); up.skipotp = true; }
+
+                    try
+                    {
                         up.currentChecksum(fw);
                     }
                     catch
